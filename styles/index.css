@@ -1,0 +1,150 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: mont; */
+    /* font-family: go; */
+    /* width: 100dvw; */
+    /* height: 100dvh; */
+
+}
+
+a{
+    text-decoration: none;
+    color: none;
+}
+
+.containerApp{
+    /* border: 1px solid green; */
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+nav{
+    /* border: 1px solid black; */
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 100%;
+    /* height: 200px; */
+    padding: 30px 0;
+    /* background-color: gold; */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img{
+    width: 80%;
+    margin: 0 auto;
+    /* height: 100%; */
+}
+
+ul{
+    /* border: 1px solid orange; */
+    flex: 1;
+    overflow: auto;
+}
+
+li{
+    /* border: 1px solid pink; */
+    padding: 15px 0;
+    padding-left: 30px;
+    /* background-color: #ccc; */
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+li:hover{
+    background-color: #edf2f6;
+}
+
+li.funcionalidadeSelecionada{
+    background-color: #edf2f6;
+    border-right: 5px solid orange;
+}
+
+li img{
+    height: 60%;
+    /* color: blue; */
+}
+
+li div{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.containerFuncionalidade{
+    flex: 1;
+    /* border: 1px solid red; */
+    margin: 0 40px;
+    margin-top: 10px;
+}
+
+.headerFuncionalidade{
+    /* border: 1px solid green; */
+    border-bottom: 5px solid orange;
+    /* height: 110px; */
+    padding: 10px 20px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.perfileFuncionalidade{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid purple; */
+    /* height: fit-content; */
+}
+
+.perfileFuncionalidade h2{
+    color: #1168a7;
+    /* border: 1px solid pink; */
+    font-size: 34px;
+}
+
+.perfileFuncionalidade .perfil{
+    display: flex;
+    /* border: 1px solid red; */
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    /* width: auto; */
+}
+
+.perfil div{
+    /* height: auto; */
+    /* width: auto; */
+    /* width: min-content; */
+    white-space: nowrap;
+    /* text-align: center; */
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.descricaoFuncionalidade{
+    /* margin-top: auto; */
+    /* border: 1px solid rebeccapurple; */
+    color: #909090;
+}
+
+.funcionalidade{
+
+}

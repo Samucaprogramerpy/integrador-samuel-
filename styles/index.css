@@ -93,6 +93,10 @@ li div{
     /* border: 1px solid red; */
     margin: 0 40px;
     margin-top: 10px;
+    height: auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .headerFuncionalidade{
@@ -104,7 +108,7 @@ li div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    
 }
 
 .perfileFuncionalidade{
@@ -146,5 +150,189 @@ li div{
 }
 
 .funcionalidade{
+    /* height: 550px; */
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    flex: 1;
+    
+}
 
+.navbarSalas{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 50px;
+    /* border: 1px solid black; */
+    align-items: center;
+}
+
+.buscar{
+    display: flex;
+    height: 100%;
+    /* border: 1px solid black; */
+    align-items: center;
+    gap: 10px;
+}
+
+.filtroSalas{
+    border: none;
+    background-color: none;
+    background-color: #1168a7;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.barraBusca{
+    height: 100%;
+    /* border: 1px solid black; */
+    /* padding: auto; */
+    display: flex;
+    border-radius: 2px;
+    width: 280px;
+}
+
+.barraBusca input{
+    height: 100%;
+    border: none;
+    background-color: none;
+    border: 2px solid black;
+    border-right: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    flex: 1;
+    font-size: 18px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.barraBusca button{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 100%;
+    width: 40px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.criarSala{
+    /* height: auto; */
+    border: none;
+    font-size: 19px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid bl; */
+    background-color: #1168a7;
+    color: white;
+    height: 100%;
+    width: 180px;
+    border: 2px solid black;
+    /* padding: 0 20px; */
+    border-radius: 10px;
+}
+
+.containerSalas{
+    /* border: 1px solid black; */
+    /* height: 100%; */
+    padding: 0 35px;
+    margin-top: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.containerSalas h2{
+    color: black;
+
+}
+
+.salas{
+    /* border: 1px solid black; */
+    flex: 1;
+    overflow: auto;
+}
+
+.sala{
+    border: 1px solid black;
+    height: 70px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 0 15px;
+}
+
+.salaCard{
+    flex-direction: row;
+    display: flex;
+    height: 100%;
+    gap: 35px;
+}
+
+.sala h4{
+    /* border: 1px solid black; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.salaInfos{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    gap: 15px;
+    justify-content: center;
+    flex: 1;
+    /* padding-left: 15px; */
+}
+
+.salaInfos div{
+    display: flex;
+}
+
+.salaInfos div p{
+    color: #808080;
+}
+
+.salaBtns{
+    width: 100px;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px 0; */
+}
+
+.salaBtns div{
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    /* flex: 1; */
+}
+
+.salaEditar{
+    background-color: #1168a7;
+}
+
+.salaExcluir{
+    background-color: red;
 }

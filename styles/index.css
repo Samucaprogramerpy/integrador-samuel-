@@ -159,7 +159,7 @@ li div{
 }
 
 .funcionalidade{
-    border: black 1px solid;
+    /* border: black 1px solid; */
     flex: 1;
     margin-top: 30px;
     display: flex;

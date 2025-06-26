@@ -1,182 +1,4 @@
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #f1f1f1;
-    font-family: Arial, Helvetica, sans-serif;
-    /* font-family: mont; */
-    /* font-family: go; */
-    /* width: 100dvw; */
-    /* height: 100dvh; */
-
-}
-
-a{
-    text-decoration: none;
-    color: none;
-}
-
-.containerApp{
-    /* border: 1px solid green; */
-    display: flex;
-    width: 100dvw;
-    height: 100dvh;
-    /* overflow: hidden; */
-}
-
-nav{
-    /* border: 1px solid black; */
-    width: 300px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo{
-    width: 100%;
-    /* height: 200px; */
-    padding: 30px 0;
-    /* background-color: gold; */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.logo img{
-    width: 80%;
-    margin: 0 auto;
-    /* height: 100%; */
-}
-
-ul{
-    /* border: 1px solid orange; */
-    flex: 1;
-    overflow: auto;
-}
-
-li{
-    /* border: 1px solid pink; */
-    padding: 15px 0;
-    padding-left: 30px;
-    /* background-color: #ccc; */
-    cursor: pointer;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-li:hover{
-    background-color: #edf2f6;
-}
-
-li.funcionalidadeSelecionada{
-    background-color: #edf2f6;
-    border-right: 5px solid #F7941D;
-}
-
-li img{
-    height: 60%;
-    /* color: blue; */
-}
-
-li div{
-    display: flex;
-    align-items: center;
-    /* border: 1px solid black; */
-}
-
-.containerFuncionalidade{
-    flex: 1;
-    /* border: 1px solid red; */
-    margin: 0 40px;
-    margin-top: 10px;
-    height: auto;
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.headerFuncionalidade{
-    /* border: 1px solid green; */
-    border-bottom: 3px solid #F7941D;
-    /* height: 110px; */
-    padding: 10px 20px;
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
-.perfileFuncionalidade{
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid purple; */
-    /* height: fit-content; */
-}
-
-.perfileFuncionalidade h2{
-    color: #004A8D;
-    /* border: 1px solid pink; */
-    font-size: 34px;
-}
-
-.perfileFuncionalidade .perfil{
-    display: flex;
-    /* border: 1px solid red; */
-    gap: 15px;
-    flex-wrap: wrap;
-    align-items: center;
-    /* width: auto; */
-}
-
-.perfil div{
-    /* height: auto; */
-    /* width: auto; */
-    /* width: min-content; */
-    white-space: nowrap;
-    /* text-align: center; */
-    flex-grow: 1;
-    min-width: 0;
-}
-
-.perfil img{
-    width: 45px;
-    height: 45px;
-}
-
-.descricaoFuncionalidade{
-    /* margin-top: auto; */
-    /* border: 1px solid rebeccapurple; */
-    color: #909090;
-}
-
-.funcionalidade{
-    /* border: black 1px solid; */
-    flex: 1;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-nav ul li img {
-    width: 38px;
-    height: 38px;
-}
-
-.calendario{
-    border: black 1px solid;
-    flex: 80%;
-}
-
 .funcionalidade ul{
     display: flex;
     flex-direction: row;
@@ -196,13 +18,17 @@ nav ul li img {
     
 }
 
-.navbarSalas{
+.navbarUsuarios{
     display: flex;
     justify-content: space-between;
     padding: 0 30px;
     height: 50px;
     /* border: 1px solid black; */
     align-items: center;
+}
+
+.usuarioInfos div{
+    gap: 10px;
 }
 
 .buscar{
@@ -213,7 +39,7 @@ nav ul li img {
     gap: 10px;
 }
 
-.filtroSalas{
+.filtrousuarios{
     border: none;
     background-color: none;
     background-color: #1168a7;
@@ -225,7 +51,7 @@ nav ul li img {
     cursor: pointer;
 }
 
-.filtroSalas:hover{
+.filtrousuarios:hover{
     background-color: #004A8D;
     color: white;
 }
@@ -267,7 +93,7 @@ nav ul li img {
     cursor: pointer;
 }
 
-.criarSala{
+.criarUsuario{
     /* height: auto; */
     border: none;
     font-size: 19px;
@@ -286,12 +112,12 @@ nav ul li img {
     cursor: pointer;
 }
 
-.criarSala:hover{
+.criarusuario:hover{
     background-color: #004A8D;
     color: white;
 }
 
-.containerSalas{
+.containerUsuarios{
     /* border: 1px solid black; */
     /* height: 100%; */
     padding: 0 35px;
@@ -303,12 +129,12 @@ nav ul li img {
     gap: 10px;
 }
 
-.containerSalas h2{
+.containerusuarios h2{
     color: black;
 
 }
 
-.salas{
+.usuarios{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
@@ -322,7 +148,7 @@ nav ul li img {
     background-color: #ccc;
 }
 
-.sala{
+.usuario{
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
@@ -330,7 +156,7 @@ nav ul li img {
     /* padding: 0 15px; */
 }
 
-.salaCard{
+.usuarioCard{
     flex-direction: row;
     display: flex;
     height: 100%;
@@ -339,7 +165,7 @@ nav ul li img {
     gap: 35px;
 }
 
-.sala h4{
+.usuario h4{
     /* border: 1px solid black; */
     display: flex;
     text-align: center;
@@ -348,7 +174,7 @@ nav ul li img {
     font-size: 28px;
 }
 
-.salaInfos{
+.usuarioInfos{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
@@ -359,15 +185,15 @@ nav ul li img {
     /* padding-left: 15px; */
 }
 
-.salaInfos div{
+.usuarioInfos div{
     display: flex;
 }
 
-.salaInfos div p{
+.usuarioInfos div p{
     color: #808080;
 }
 
-.salaBtns{
+.usuarioBtns{
     width: 100px;
     /* border: 1px solid red; */
     display: flex;
@@ -377,7 +203,7 @@ nav ul li img {
     /* padding: 10px 0; */
 }
 
-.salaBtns div{
+.usuarioBtns div{
     border: 1px solid black;
     height: 40px;
     width: 40px;
@@ -389,12 +215,12 @@ nav ul li img {
     /* flex: 1; */
 }
 
-.salaEditar{
+.usuarioEditar{
     background-color: #1168a7;
     cursor: pointer;
 }
 
-.salaExcluir{
+.usuarioExcluir{
     background-color: red;
     cursor: pointer;
 }

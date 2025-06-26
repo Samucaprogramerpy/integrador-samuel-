@@ -5,6 +5,10 @@ pra fazer sua funcionalidade
 - Sempre que for fazer sua tela crie um css para fazer o estilo da sua funcionalidade e evitar merge conflicts
 
 
+{
+    "Informática 3": [["19/06", ]]
+}
+
 Padrão dos botões
 
 .ExemploBotãoAzul{

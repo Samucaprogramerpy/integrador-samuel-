@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/calendario.css">
 </head>
-<body>
+<body onload="carregarCalendario()">
 
     <div class="containerApp">
         <nav>
@@ -59,21 +59,22 @@
             </div>
             <div class="funcionalidade">
                 <div class="containerAgendamentos">
-                    <div class="calendario">
-                        <div class="salasAgendamentos">
+                    <div id="calendario" class="calendario">
+                        <div id="salasAgendamentos" class="salasAgendamentos">
                             <div class="voltarAvancar moduloCalendario">
 
                             </div>
-                            <div class="salaAgendamentos moduloCalendario">Sala</div>
-                            <div class="salaAgendamentos moduloCalendario">Sala</div>
+                            <!-- <div class="salaAgendamentos moduloCalendario">Sala</div> -->
                         </div>
-                        <div class="diaAgendamentos">
+                        <div id="dia1" class="diaAgendamentos">
                             <div class="dataAgendamentos moduloCalendario">
                                 <div>SEX</div>
                                 <div>27/06</div>
                             </div>
                             <div class="moduloAgendamentos moduloCalendario">
-                                
+                                <div class="reserva rManha">Maria Paula</div>
+                                <div class="reserva rTarde">Thiago</div>
+                                <div class="reserva rNoite">Ramiro Junior</div>
                             </div>
                             <div class="moduloAgendamentos moduloCalendario">
 
@@ -165,6 +166,6 @@
         </div>    
     </div>
 
-
+<script src="script/agendamento.js" ></script>
 </body>
 </html>

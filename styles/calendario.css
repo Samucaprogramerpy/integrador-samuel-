@@ -23,7 +23,7 @@
 }
 
 .moduloCalendario{
-    height: 60px;
+    height: 70px;
     border: 1px solid black;
 }
 
@@ -32,13 +32,22 @@
     color: white;
     display: flex;
     font-size: 19px;
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
+    justify-content: flex-start;
     padding-left: 15px;
 }
 
 .diaAgendamentos{
     flex: 1;
+}
+
+.moduloAgendamentos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px
 }
 
 .dataAgendamentos{
@@ -83,4 +92,29 @@
     justify-content: center;
     background-color: #004A8D;
     color: white;
+}
+
+
+.reserva{
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    /* padding: 1px 5px; */
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.rManha{
+    background-color: rgb(217, 217, 0);
+    background-color: #fbad18;
+    /* color: black; */
+}
+
+.rTarde{
+    background-color: #D86700;
+}
+
+.rNoite{
+    background-color: #004A8D;
 }

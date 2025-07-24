@@ -73,7 +73,7 @@ li:hover{
     background-color: #edf2f6;
 }
 
-li.funcionalidadeSelecionada{
+.funcionalidadeSelecionada{
     background-color: #edf2f6;
     border-right: 5px solid #F7941D;
 }

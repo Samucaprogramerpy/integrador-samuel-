@@ -16,8 +16,8 @@
                     <img width="100" src="img/image.png" alt="">
                 </div>
             </a>
-            <ul>
-                <li class="funcionalidadeSelecionada" onclick="loadPageIntoDiv('agendamento.html', 'Func')" >
+            <ul class="menu">
+                <li onclick="loadPageIntoDiv('agendamento.html', 'Func')" >
                     <img src="./img/Calendario.png" alt="">
                     <div>Agendamentos</div>
                 </li>
@@ -58,9 +58,26 @@
         fetch(url)
           .then(response => response.text())
           .then(data => {
-            document.getElementById(divId).innerHTML = data;
+            const divSec= document.getElementById(divId)
+            divSec.innerHTML = data;
+
+
           })
           .catch(error => console.error('Erro ao carregar a página:', error));
+}
+      
+      function removerStyle() {
+        Menu.forEach(section => {
+            section.classList.remove('funcionalidadeSelecionada')
+        })
       }
+
+      const Menu = document.querySelectorAll('.menu');
+      Menu.forEach(i 
+
+
+            
+        })
+        });
 </script>
 </html>

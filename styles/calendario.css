@@ -15,7 +15,7 @@
 
 .salasAgendamentos{
     /* border: 1px solid black; */
-    width: 200px;
+    width: 160px;
 }
 
 .salasAgendamentos div{
@@ -23,7 +23,7 @@
 }
 
 .moduloCalendario{
-    height: 70px;
+    height: 90px;
     border: 1px solid black;
 }
 
@@ -36,10 +36,12 @@
     align-items: center;
     justify-content: flex-start;
     padding-left: 15px;
+    padding-right: 5px;
 }
 
 .diaAgendamentos{
     flex: 1;
+    min-width: 0;
 }
 
 .moduloAgendamentos{
@@ -99,10 +101,14 @@
     width: 80%;
     text-align: center;
     border-radius: 10px;
+    padding: 2px 5px;
     /* padding: 1px 5px; */
     font-size: 13px;
     color: white;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rManha{
@@ -117,4 +123,25 @@
 
 .rNoite{
     background-color: #004A8D;
+}
+
+.voltarAvancar{
+    display: flex;
+    align-items: center;
+    /* gap: 15px; */
+    padding: 0 10px;
+    justify-content: space-around;
+}
+
+.voltarAvancar div{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #999999;
+    color: white;
 }

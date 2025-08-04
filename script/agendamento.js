@@ -10,7 +10,7 @@ const Salas = {
       "SALA002": "Sala de Reunião 1"
     }
   }
-const data = {
+const dataAntiga = {
     "status": "success",
     "message": "Agendamentos e disponibilidade de salas de 24/07/2025 a 01/08/2025 recuperados com sucesso.",
     "data": {
@@ -535,12 +535,611 @@ const data = {
     }
   }
 
-function formatarData(data){
+const dataAgendamentos = {
+    "status": "success",
+    "message": "Agendamentos e disponibilidade de salas de 04/08/2025 a 12/08/2025 recuperados com sucesso.",
+    "data": {
+      "2025-08-04": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [
+            {
+              "idAgendamento": "AGEN008",
+              "horaInicio": "14:00",
+              "horaFim": "17:00",
+              "finalidade": "Reunião de Coordenação",
+              "responsavel": {
+                "idUsuario": "USER005",
+                "nome": "Coord. Pedro Alvares",
+                "email": "pedro.alvares@instituicao.edu.br"
+              },
+              "recursosAdicionais": []
+            }
+          ],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [
+            {
+              "idAgendamento": "AGEN009",
+              "horaInicio": "15:30",
+              "horaFim": "17:30",
+              "finalidade": "Plantão de Dúvidas - Cálculo",
+              "responsavel": {
+                "idUsuario": "USER001",
+                "nome": "Prof. Ana Souza",
+                "email": "ana.souza@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Quadro Branco"
+              ]
+            }
+          ],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-05": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [
+            {
+              "idAgendamento": "AGEN002",
+              "horaInicio": "14:00",
+              "horaFim": "18:00",
+              "finalidade": "Palestra sobre Inovação",
+              "responsavel": {
+                "idUsuario": "USER005",
+                "nome": "Coord. Pedro Alvares",
+                "email": "pedro.alvares@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Sistema de Som",
+                "Microfone sem Fio",
+                "Telão"
+              ]
+            }
+          ],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN001",
+              "horaInicio": "09:00",
+              "horaFim": "12:00",
+              "finalidade": "Aula de Programação Avançada",
+              "responsavel": {
+                "idUsuario": "USER001",
+                "nome": "Prof. Ana Souza",
+                "email": "ana.souza@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Projetor",
+                "Computadores"
+              ]
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-06": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN001",
+              "horaInicio": "09:00",
+              "horaFim": "12:00",
+              "finalidade": "Aula de Programação Avançada",
+              "responsavel": {
+                "idUsuario": "USER001",
+                "nome": "Prof. Ana Souza",
+                "email": "ana.souza@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Projetor",
+                "Computadores"
+              ]
+            }
+          ],
+          "agendamentosTarde": [
+            {
+              "idAgendamento": "AGEN004",
+              "horaInicio": "15:00",
+              "horaFim": "17:00",
+              "finalidade": "Grupo de Estudo",
+              "responsavel": {
+                "idUsuario": "USER015",
+                "nome": "Carlos Roberto Silva",
+                "email": "carlos.roberto@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Quadro Branco"
+              ]
+            }
+          ],
+          "agendamentosNoite": [
+            {
+              "idAgendamento": "AGEN007",
+              "horaInicio": "19:00",
+              "horaFim": "22:00",
+              "finalidade": "Evento Cultural",
+              "responsavel": {
+                "idUsuario": "USER030",
+                "nome": "Maria Eduarda",
+                "email": "maria.eduarda@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Sistema de Iluminação",
+                "Projetor"
+              ]
+            }
+          ]
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN003",
+              "horaInicio": "10:30",
+              "horaFim": "11:30",
+              "finalidade": "Reunião de Projeto",
+              "responsavel": {
+                "idUsuario": "USER012",
+                "nome": "Mariana Lima",
+                "email": "mariana.lima@instituicao.edu.br"
+              },
+              "recursosAdicionais": []
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-07": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-08": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN006",
+              "horaInicio": "08:30",
+              "horaFim": "11:30",
+              "finalidade": "Treinamento de Software",
+              "responsavel": {
+                "idUsuario": "USER020",
+                "nome": "João Carlos",
+                "email": "joao.carlos@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Computadores"
+              ]
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN005",
+              "horaInicio": "08:00",
+              "horaFim": "10:00",
+              "finalidade": "Aula de Matemática",
+              "responsavel": {
+                "idUsuario": "USER001",
+                "nome": "Prof. Ana Souza",
+                "email": "ana.souza@instituicao.edu.br"
+              },
+              "recursosAdicionais": []
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-09": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": [
+            {
+              "idAgendamento": "AGEN007",
+              "horaInicio": "19:00",
+              "horaFim": "22:00",
+              "finalidade": "Evento Cultural",
+              "responsavel": {
+                "idUsuario": "USER030",
+                "nome": "Maria Eduarda",
+                "email": "maria.eduarda@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Sistema de Iluminação",
+                "Projetor"
+              ]
+            }
+          ]
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-10": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [
+            {
+              "idAgendamento": "AGEN010",
+              "horaInicio": "13:00",
+              "horaFim": "16:00",
+              "finalidade": "Workshop de Data Science",
+              "responsavel": {
+                "idUsuario": "USER020",
+                "nome": "João Carlos",
+                "email": "joao.carlos@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Computadores",
+                "Projetor"
+              ]
+            }
+          ],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN011",
+              "horaInicio": "08:00",
+              "horaFim": "10:00",
+              "finalidade": "Reunião Departamental",
+              "responsavel": {
+                "idUsuario": "USER001",
+                "nome": "Prof. Ana Souza",
+                "email": "ana.souza@instituicao.edu.br"
+              },
+              "recursosAdicionais": []
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-11": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [
+            {
+              "idAgendamento": "AGEN012",
+              "horaInicio": "09:00",
+              "horaFim": "12:00",
+              "finalidade": "Sessão de Orientação de TCC",
+              "responsavel": {
+                "idUsuario": "USER015",
+                "nome": "Carlos Roberto",
+                "email": "carlos.roberto@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Lousa Interativa"
+              ]
+            }
+          ],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      },
+      "2025-08-12": {
+        "SALA010": {
+          "nomeSala": "Auditório Principal",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA005": {
+          "nomeSala": "Laboratório de Informática 1",
+          "bloco": "Bloco C",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA001": {
+          "nomeSala": "Sala de Aula 1",
+          "bloco": "Bloco A",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": [
+            {
+              "idAgendamento": "AGEN013",
+              "horaInicio": "19:00",
+              "horaFim": "22:30",
+              "finalidade": "Defesa de Projeto de Graduação",
+              "responsavel": {
+                "idUsuario": "USER012",
+                "nome": "Mariana Lima",
+                "email": "mariana.lima@instituicao.edu.br"
+              },
+              "recursosAdicionais": [
+                "Projetor",
+                "Sistema de Som"
+              ]
+            }
+          ]
+        },
+        "SALA007": {
+          "nomeSala": "Sala de Estudo Coletivo",
+          "bloco": "Bloco D",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        },
+        "SALA002": {
+          "nomeSala": "Sala de Reunião 1",
+          "bloco": "Bloco B",
+          "agendamentosManha": [],
+          "agendamentosTarde": [],
+          "agendamentosNoite": []
+        }
+      }
+    }
+  }
+
+// Constantes principais
+const DataMinima = new Date();
+const DiasSemana = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+const SemanaPesquisada = setSemanaPesquisada();
+const btnAvancarCalendario = document.getElementById('btnAvancarCalendario');
+const btnVoltarCalendario = document.getElementById('btnVoltarCalendario');
+
+function onAvancarCalendario(){
+  const novaSemanaPesquisada = avançarSemanaPesquisada(SemanaPesquisada);
+  while (SemanaPesquisada.length !== 0) {
+    SemanaPesquisada.pop()
+  }
+  novaSemanaPesquisada.forEach( data => {
+    SemanaPesquisada.push(data)
+  }
+  )
+  // SemanaPesquisada = novaSemanaPesquisada;
+  carregarCalendario();
+}
+
+function onVoltarCalendario(){
+  const novaSemanaPesquisada = voltarSemanaPesquisada(SemanaPesquisada);
+}
+
+function formatarData(data, formatoData='yyyy-mm-dd'){
+
     const anoAtual = data.getFullYear();
     const mes = (data.getMonth() + 1).toString().padStart(2, '0');
     const dia = (data.getDate()).toString().padStart(2, '0');
 
+
+    if(formatoData === 'yyyy-mm-dd'){
+      return `${anoAtual}-${mes}-${dia}`
+    }
+    if(formatoData === 'dd/mm'){
+      return `${dia}/${mes}`
+    }
+    
     return `${anoAtual}-${mes}-${dia}`
+
 
 }
 
@@ -551,55 +1150,145 @@ function dataAtual(diasFuturos=0){
     return formatarData(dataAtual)
 }
 
+function setSemanaPesquisada(semanaPesquisada=[]){
+    for (let i = 0; i <=6; i++){
+      const data = new Date();
+      data.setDate(data.getDate() + i)
+      semanaPesquisada.push(data)
+    }
+    return semanaPesquisada
+}
+
+function avançarSemanaPesquisada(semanaPesquisada=[new Date()]){
+  const novaSemanaPesquisada = []
+  if (semanaPesquisada.length > 0){
+    const primeiraData = semanaPesquisada[0]
+    primeiraData.setDate(primeiraData.getDate() + 1)
+    for (let i = 0; i <=6; i++){
+      primeiraData.setDate(primeiraData.getDate() + i)
+      novaSemanaPesquisada.push(primeiraData)
+    }
+    return novaSemanaPesquisada
+  } else {
+    return setSemanaPesquisada()
+  }
+}
+
+function voltarSemanaPesquisada(semanaPesquisada=[new Date()]){
+  const novaSemanaPesquisada = []
+  if (semanaPesquisada.length > 0){
+    const primeiraData = semanaPesquisada[0]
+    primeiraData.setDate(primeiraData.getDate() - 1)
+    for (let i = 0; i <=6; i++){
+      primeiraData.setDate(primeiraData.getDate() + i)
+      novaSemanaPesquisada.push(primeiraData)
+    }
+    return novaSemanaPesquisada
+  } else {
+    return setSemanaPesquisada()
+  }
+}
+
+function carregarModulosCalendario(){
+  let contadorSemana = 0;
+  SemanaPesquisada.forEach( data => {
+      contadorSemana += 1;
+      const diaSemana = DiasSemana[data.getDay()]
+      const diaFormatado = formatarData(data, formatoData='dd/mm')
+      const diaCompletamenteFormatado = formatarData(data)
+      const diaCalendario = document.getElementById(`dia${contadorSemana}`)
+      const stringFormatadaHeaderDia = `               
+        <div class="dataAgendamentos moduloCalendario">
+            <div>${diaSemana}</div>
+            <div>${diaFormatado}</div>
+        </div>
+      `
+
+      const stringFormatadaDeDiaSalaExemplo = `
+      <div class="moduloAgendamentos moduloCalendario">
+          <div class="reserva rManha">Maria Paula</div>
+          <div class="reserva rTarde">Thiago</div>
+          <div class="reserva rNoite">Ramiro Junior</div>
+      </div>
+      `
+      
+      const stringFormatadaDeDiaSala = `
+      <div class="moduloAgendamentos moduloCalendario">
+
+      </div>
+      `
+
+      diaCalendario.innerHTML = stringFormatadaHeaderDia
+
+      Object.keys(Salas.data).forEach( sala => {
+        const idModuloDiaSala = `${sala}&${diaCompletamenteFormatado}`;
+    
+        const stringFormatadaDeDiaSala = `
+        <div id=${idModuloDiaSala} class="moduloAgendamentos moduloCalendario">
+    
+        </div>
+        `
+        diaCalendario.innerHTML += stringFormatadaDeDiaSala
+      }
+    )
+  }
+  )
+
+}
+
+function carregarReservasCalendario(){
+
+  Object.keys(Salas.data).forEach( sala => {
+    SemanaPesquisada.forEach(dataDeSemanaPesquisada => {
+      const dataCompletamenteFormatada = formatarData(dataDeSemanaPesquisada);
+      const idModuloDiaSala = `${sala}&${dataCompletamenteFormatada}`
+      const moduloDoDiaSala = document.getElementById(idModuloDiaSala);
+
+      if (dataAgendamentos.data[dataCompletamenteFormatada][sala]){
+        const agendamentosDiaSala = dataAgendamentos.data[dataCompletamenteFormatada][sala]
+        const moduloReservaDiaSala = document.getElementById(idModuloDiaSala)
+  
+        if (agendamentosDiaSala['agendamentosManha'].length !== 0){
+          const idModuloDiaSalaTurno = idModuloDiaSala+`&manha`;
+          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosManha'][0]['responsavel']['nome']
+          const stringReservaManha = `<div id=${idModuloDiaSalaTurno} class="reserva rManha">${nomeResponsavelReserva}</div>
+          `
+          moduloReservaDiaSala.innerHTML += stringReservaManha;
+        }
+        if (agendamentosDiaSala.agendamentosTarde.length !== 0){
+          const idModuloDiaSalaTurno = idModuloDiaSala+`&tarde`
+          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosTarde'][0]['responsavel']['nome']
+          const stringReservaTarde = `<div id=${idModuloDiaSalaTurno} class="reserva rTarde">${nomeResponsavelReserva}</div>
+          `
+          moduloReservaDiaSala.innerHTML += stringReservaTarde
+        }
+        if (agendamentosDiaSala.agendamentosNoite.length !== 0){
+          const idModuloDiaSalaTurno = idModuloDiaSala+`&noite`
+          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosNoite'][0]['responsavel']['nome']
+          const stringReservaNoite = `<div id=${idModuloDiaSalaTurno} class="reserva rNoite">${nomeResponsavelReserva}</div>
+          `
+          moduloReservaDiaSala.innerHTML += stringReservaNoite
+        }
+      }
+  
+    })
+  }
+  )
+
+
+}
+
 function carregarCalendario(){
  
     const calendario = document.getElementById('calendario');
     const salasAgendamentos = document.getElementById('salasAgendamentos');
-    // const dataMinima = dataAtual();
-    // const amanha = dataAtual(1);
-    // const dataMaxima = dataAtual(6);
-    const semanaPesquisada = [];
-    for (let i = 0; i <=6; i++){
-        const data = dataAtual(i);
-        semanaPesquisada.push(data)
-    }
 
-    console.log(semanaPesquisada)
-
-
-    // console.log(Object.values(Salas.data).sort())
     Object.keys(Salas.data).forEach(sala => {
-        // console.log(sala)
         salasAgendamentos.innerHTML += `<div id="${sala}" class="salaAgendamentos moduloCalendario">${Salas.data[sala]}</div>`
         
     });
 
-    let contadorSemana = 0;
-    semanaPesquisada.forEach( data => {
-        contadorSemana += 1;
-        console.log(data)
-        const diaCalendario = document.getElementById(`dia${contadorSemana}`)
-        const stringFormatada = `               
-                            <div class="dataAgendamentos moduloCalendario">
-                                <div>SEX</div>
-                                <div>27/06</div>
-                            </div>
-                            
-                            <div class="moduloAgendamentos moduloCalendario">
+    carregarModulosCalendario();
 
-                            </div>
-`
-        const stringFormatadaDeDiaSala = `
-        <div class="moduloAgendamentos moduloCalendario">
-            <div class="reserva rManha">Maria Paula</div>
-            <div class="reserva rTarde">Thiago</div>
-            <div class="reserva rNoite">Ramiro Junior</div>
-        </div>
-        `
-    }
-    )
-    // console.log(dataMinima)
-    // console.log(amanha)
-
-    // console.log(data['data'][dataMinima])
+    carregarReservasCalendario();
 }

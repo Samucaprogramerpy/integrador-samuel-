@@ -1,10 +1,21 @@
+:root {
+  --AZUL: #004A8D;
+  --LARANJA: #F7941D;
+  --BORDA: #B0BCCB;
+  --CINZA-CAIXA: #e0e6ed;
+  
+}
+*{
+  font-family: "Poppins", sans-serif;
+}
+
 /* Seu estilo existente para a salaDescricao, com as alterações para animação */
 .salaDescricao {
     display: flex;
-    border: 1px solid black;
+    border: 1px solid var(--BORDA);
     /* flex-wrap: nowrap; */
     flex-direction: column;
-    background-color: lightgray; /* Usando apenas uma cor */
+    background-color: #f6f8fa; /* Usando apenas uma cor */
     padding: 25px 15px;
     /* display: none; <-- Removeremos isso para a animação */
     border-bottom-right-radius: 10px;

@@ -1,7 +1,14 @@
+:root {
+    --AZUL: #004A8D;
+    --LARANJA: #F7941D;
+    --BORDA: #B0BCCB;
+    --CINZA-CAIXA: #e0e6ed;
+}
 
 *{
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -126,7 +133,7 @@ li:hover{
     background-color: #edf2f6;
 }
 
-li.funcionalidadeSelecionada{
+.funcionalidadeSelecionada{
     background-color: #edf2f6;
     border-right: 5px solid #F7941D;
 }
@@ -226,7 +233,7 @@ nav ul li img {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid var(--BORDA);
     cursor: pointer;
 }
 
@@ -248,7 +255,7 @@ nav ul li img {
     height: 100%;
     border: none;
     background-color: none;
-    border: 2px solid black;
+    border: 2px solid var(--BORDA);
     border-right: none;
     border-radius: 5px;
     padding-left: 10px;
@@ -263,7 +270,7 @@ nav ul li img {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 2px solid var(--BORDA);
     border-radius: 5px;
     height: 100%;
     width: 40px;
@@ -285,7 +292,7 @@ nav ul li img {
     color: white;
     height: 100%;
     width: 180px;
-    border: 2px solid black;
+    border: 2px solid var(--BORDA);
     /* padding: 0 20px; */
     border-radius: 10px;
     cursor: pointer;
@@ -321,14 +328,14 @@ nav ul li img {
     overflow: auto;
     gap: 20px;
     max-height: 60dvh;
-    border: 2px solid black;
+    border: 2px solid var(--BORDA);
     padding: 15px;
     border-radius: 5px;
-    background-color: #ccc;
+    background-color: var(--CINZA-CAIXA);
 }
 
 .sala{
-    border: 1px solid black;
+    border: 1px solid var(--BORDA);
     border-radius: 10px;
     background-color: white;
     /* margin-bottom: 20px; */
@@ -383,7 +390,7 @@ nav ul li img {
 }
 
 .salaBtns div{
-    border: 1px solid black;
+    border: 1px solid var(--BORDA);
     height: 40px;
     width: 40px;
     display: flex;
@@ -405,7 +412,7 @@ nav ul li img {
 }
 
 .funcionalidade ul li{
-    border: black 2px solid;
+    border: var(--BORDA) 2px solid;
     border-radius: 10px;
     width: 250px;
     height: 45px;
@@ -417,5 +424,10 @@ nav ul li img {
     background-color: #004A8D;
     color: white;
     padding-left: 0px;
+}
+
+.TextMenu {
+    font-weight: 600;
+    color: var(--AZUL);
 }
 

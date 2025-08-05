@@ -6,6 +6,9 @@
     <title>Senac Hall</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/calendario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -16,30 +19,30 @@
                     <img width="100" src="img/image.png" alt="">
                 </div>
             </a>
-            <ul class="menu">
+            <ul id="menu">
                 <li onclick="loadPageIntoDiv('agendamento.html', 'Func')" >
                     <img src="./img/Calendario.png" alt="">
-                    <div>Agendamentos</div>
+                    <div><p class="TextMenu">Agendamentos</p></div>
                 </li>
                 <li onclick="loadPageIntoDiv('salas.html', 'Func')">
                     <img src="./img/Salas.png" alt="">
-                    <div>Salas</div>
+                    <div><p class="TextMenu">Salas</p></div>
                 </li>
                 <li onclick="loadPageIntoDiv('usuarios.html', 'Func')">
                     <img src="./img/Perfil.png" alt="">
-                    <div>Usuários</div>
+                    <div><p class="TextMenu">Usuários</p></div>
                 </li>
                 <li>
                     <img src="./img/Instrutor.png" alt="">
-                    <div>Pedidos de Instrutores</div>
+                    <div><p class="TextMenu">Pedidos de Instrutores</p></div>
                 </li>
                 <li>
                     <img src="./img/Bloqueio.png" alt="">
-                    <div>Bloqueios de Agendamentos</div>
+                    <div><p class="TextMenu">Bloqueios de Agendamentos</p></div>
                 </li>
                 <li>
                     <img src="./img/Sair.png" alt="">
-                    <div>Sair</div>
+                    <div><p class="TextMenu">Sair</p></div>
                 </li>
                 
             </ul>
@@ -54,30 +57,25 @@
     const load = document.getElementById('Func');
     load.innerHTML = loadPageIntoDiv('agendamento.html', 'Func');
     
-    function loadPageIntoDiv(url, divId) {
+    function loadPageIntoDiv(url, divId, event) {
         fetch(url)
           .then(response => response.text())
           .then(data => {
             const divSec= document.getElementById(divId)
             divSec.innerHTML = data;
 
-
           })
           .catch(error => console.error('Erro ao carregar a página:', error));
-}
-      
-      function removerStyle() {
-        Menu.forEach(section => {
-            section.classList.remove('funcionalidadeSelecionada')
-        })
-      }
+    }
+    const Menu = document.querySelectorAll("#menu li");
+    Menu.forEach(item => {
+    item.addEventListener("click", function () {
+    // Remove a classe de todos os itens
+        Menu.forEach(el => el.classList.remove("funcionalidadeSelecionada"));
 
-      const Menu = document.querySelectorAll('.menu');
-      Menu.forEach(i 
-
-
-            
-        })
-        });
+        // Adiciona ao item clicado
+        this.classList.add("funcionalidadeSelecionada");
+    });
+});
 </script>
 </html>

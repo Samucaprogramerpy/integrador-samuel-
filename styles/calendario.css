@@ -1,17 +1,37 @@
 
 
 .containerAgendamentos{
-    /* border: 1px solid black; */
-    height: 100%;
+    /* border: 1px solid red; */
+    flex: 1;
+    overflow-y: auto;
+    justify-content: space-between;
+    /* max-height: 300px; */
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
 }
 
 .calendario{
     border: black 1px solid;
-    flex: 80%;
+    /* flex: 80%; */
+    /* flex: 1; */
+    /* min-height: 0; */
+    max-height: 400px;
     display: flex;
+    overflow: auto;
+    
 }
+
+.botoesAgendamentos{
+    /* flex: 20%; */
+    /* flex: ; */
+    /* border: 1px solid black; */
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 
 .salasAgendamentos{
     /* border: 1px solid black; */
@@ -68,19 +88,6 @@
     flex: 1;
 }
 
-
-
-
-
-
-
-.botoesAgendamentos{
-    flex: 20%;
-    /* border: 1px solid black; */
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
 
 .botoesAgendamentos div{
     border: black 2px solid;
@@ -144,4 +151,8 @@
     border-radius: 50px;
     background-color: #999999;
     color: white;
+}
+
+.semVoltarCalendario{
+    background-color: #000;
 }

@@ -1103,25 +1103,29 @@ const dataAgendamentos = {
 // Constantes principais
 const DataMinima = new Date();
 const DiasSemana = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
-const SemanaPesquisada = setSemanaPesquisada();
+let SemanaPesquisada = setSemanaPesquisada();
+// console.log(SemanaPesquisada)
 const btnAvancarCalendario = document.getElementById('btnAvancarCalendario');
 const btnVoltarCalendario = document.getElementById('btnVoltarCalendario');
 
+function toogleVoltarCalendarioButton(){
+  btnVoltarCalendario.classList.toggle('semVoltarCalendario')
+}
+
 function onAvancarCalendario(){
-  const novaSemanaPesquisada = avançarSemanaPesquisada(SemanaPesquisada);
-  while (SemanaPesquisada.length !== 0) {
-    SemanaPesquisada.pop()
-  }
-  novaSemanaPesquisada.forEach( data => {
-    SemanaPesquisada.push(data)
-  }
-  )
-  // SemanaPesquisada = novaSemanaPesquisada;
+  SemanaPesquisada= avançarSemanaPesquisada();
+  // console.log(SemanaPesquisada)
   carregarCalendario();
 }
 
 function onVoltarCalendario(){
-  const novaSemanaPesquisada = voltarSemanaPesquisada(SemanaPesquisada);
+  // console.log(voltarSemanaPesquisada()[0] < DataMinima)
+  if (voltarSemanaPesquisada()[0] < DataMinima){
+    return
+  } else{
+    SemanaPesquisada = voltarSemanaPesquisada();
+    carregarCalendario();
+  }
 }
 
 function formatarData(data, formatoData='yyyy-mm-dd'){
@@ -1159,34 +1163,28 @@ function setSemanaPesquisada(semanaPesquisada=[]){
     return semanaPesquisada
 }
 
-function avançarSemanaPesquisada(semanaPesquisada=[new Date()]){
-  const novaSemanaPesquisada = []
-  if (semanaPesquisada.length > 0){
-    const primeiraData = semanaPesquisada[0]
-    primeiraData.setDate(primeiraData.getDate() + 1)
-    for (let i = 0; i <=6; i++){
-      primeiraData.setDate(primeiraData.getDate() + i)
-      novaSemanaPesquisada.push(primeiraData)
-    }
-    return novaSemanaPesquisada
-  } else {
-    return setSemanaPesquisada()
-  }
+function avançarSemanaPesquisada(){
+  const novaSemanaPesquisada = [...SemanaPesquisada]
+  novaSemanaPesquisada.forEach(data => {
+    // const novaData = 0
+    data.setDate(data.getDate() + 1)
+    // novaSemanaPesquisada.push(data)
+    // console.log(data)
+    // console.log(novaData)
+  })
+  // console.log(novaSemanaPesquisada)
+  return novaSemanaPesquisada
 }
 
-function voltarSemanaPesquisada(semanaPesquisada=[new Date()]){
+function voltarSemanaPesquisada(){
   const novaSemanaPesquisada = []
-  if (semanaPesquisada.length > 0){
-    const primeiraData = semanaPesquisada[0]
-    primeiraData.setDate(primeiraData.getDate() - 1)
-    for (let i = 0; i <=6; i++){
-      primeiraData.setDate(primeiraData.getDate() + i)
-      novaSemanaPesquisada.push(primeiraData)
-    }
-    return novaSemanaPesquisada
-  } else {
-    return setSemanaPesquisada()
-  }
+  SemanaPesquisada.map(data => {
+    const novaData = new Date(data);
+    // console.log(novaData)
+    novaData.setDate(novaData.getDate() - 1);
+    novaSemanaPesquisada.push(novaData)  
+})
+  return novaSemanaPesquisada
 }
 
 function carregarModulosCalendario(){
@@ -1244,30 +1242,33 @@ function carregarReservasCalendario(){
       const idModuloDiaSala = `${sala}&${dataCompletamenteFormatada}`
       const moduloDoDiaSala = document.getElementById(idModuloDiaSala);
 
-      if (dataAgendamentos.data[dataCompletamenteFormatada][sala]){
-        const agendamentosDiaSala = dataAgendamentos.data[dataCompletamenteFormatada][sala]
-        const moduloReservaDiaSala = document.getElementById(idModuloDiaSala)
-  
-        if (agendamentosDiaSala['agendamentosManha'].length !== 0){
-          const idModuloDiaSalaTurno = idModuloDiaSala+`&manha`;
-          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosManha'][0]['responsavel']['nome']
-          const stringReservaManha = `<div id=${idModuloDiaSalaTurno} class="reserva rManha">${nomeResponsavelReserva}</div>
-          `
-          moduloReservaDiaSala.innerHTML += stringReservaManha;
-        }
-        if (agendamentosDiaSala.agendamentosTarde.length !== 0){
-          const idModuloDiaSalaTurno = idModuloDiaSala+`&tarde`
-          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosTarde'][0]['responsavel']['nome']
-          const stringReservaTarde = `<div id=${idModuloDiaSalaTurno} class="reserva rTarde">${nomeResponsavelReserva}</div>
-          `
-          moduloReservaDiaSala.innerHTML += stringReservaTarde
-        }
-        if (agendamentosDiaSala.agendamentosNoite.length !== 0){
-          const idModuloDiaSalaTurno = idModuloDiaSala+`&noite`
-          const nomeResponsavelReserva = agendamentosDiaSala['agendamentosNoite'][0]['responsavel']['nome']
-          const stringReservaNoite = `<div id=${idModuloDiaSalaTurno} class="reserva rNoite">${nomeResponsavelReserva}</div>
-          `
-          moduloReservaDiaSala.innerHTML += stringReservaNoite
+      if (dataAgendamentos.data[dataCompletamenteFormatada]){
+        if (dataAgendamentos.data[dataCompletamenteFormatada][sala]){
+          const agendamentosDiaSala = dataAgendamentos.data[dataCompletamenteFormatada][sala]
+          const moduloReservaDiaSala = document.getElementById(idModuloDiaSala)
+    
+          if (agendamentosDiaSala['agendamentosManha'].length !== 0){
+            const idModuloDiaSalaTurno = idModuloDiaSala+`&manha`;
+            const nomeResponsavelReserva = agendamentosDiaSala['agendamentosManha'][0]['responsavel']['nome']
+            const stringReservaManha = `<div id=${idModuloDiaSalaTurno} class="reserva rManha">${nomeResponsavelReserva}</div>
+            `
+            moduloReservaDiaSala.innerHTML += stringReservaManha;
+          }
+          if (agendamentosDiaSala.agendamentosTarde.length !== 0){
+            const idModuloDiaSalaTurno = idModuloDiaSala+`&tarde`
+            const nomeResponsavelReserva = agendamentosDiaSala['agendamentosTarde'][0]['responsavel']['nome']
+            const stringReservaTarde = `<div id=${idModuloDiaSalaTurno} class="reserva rTarde">${nomeResponsavelReserva}</div>
+            `
+            moduloReservaDiaSala.innerHTML += stringReservaTarde
+          }
+          if (agendamentosDiaSala.agendamentosNoite.length !== 0){
+            const idModuloDiaSalaTurno = idModuloDiaSala+`&noite`
+            const nomeResponsavelReserva = agendamentosDiaSala['agendamentosNoite'][0]['responsavel']['nome']
+            const stringReservaNoite = `<div id=${idModuloDiaSalaTurno} class="reserva rNoite">${nomeResponsavelReserva}</div>
+            `
+            moduloReservaDiaSala.innerHTML += stringReservaNoite
+          }
+
         }
       }
   
@@ -1278,9 +1279,48 @@ function carregarReservasCalendario(){
 
 }
 
+function resetarCalendario(){
+  const calendario = document.getElementById('calendario');
+  const stringCalendarioResetado = `                        <div id="salasAgendamentos" class="salasAgendamentos">
+                            <div class="voltarAvancar moduloCalendario">
+                                <div id="btnVoltarCalendario" onclick="onVoltarCalendario()">
+                                    V
+                                </div>
+                                <div id="btnAvancarCalendario" onclick="onAvancarCalendario()">
+                                    A
+                                </div>
+                            </div>
+                            <!-- <div class="salaAgendamentos moduloCalendario">Sala</div> -->
+                        </div>
+                        <div id="dia1" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia2" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia3" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia4" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia5" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia6" class="diaAgendamentos">
+
+                        </div>
+                        <div id="dia7" class="diaAgendamentos">
+
+                        </div>
+`
+  calendario.innerHTML = stringCalendarioResetado;
+}
+
 function carregarCalendario(){
- 
-    const calendario = document.getElementById('calendario');
+
+
+    resetarCalendario()
     const salasAgendamentos = document.getElementById('salasAgendamentos');
 
     Object.keys(Salas.data).forEach(sala => {

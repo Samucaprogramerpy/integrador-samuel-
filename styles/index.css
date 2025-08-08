@@ -1,14 +1,7 @@
-:root {
-    --AZUL: #004A8D;
-    --LARANJA: #F7941D;
-    --BORDA: #B0BCCB;
-    --CINZA-CAIXA: #e0e6ed;
-}
 
 *{
     padding: 0;
     margin: 0;
-    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -16,7 +9,6 @@ body{
     background-color: #f1f1f1;
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: mont; */
-    /* overflow: hidden; */
     /* font-family: go; */
     /* width: 100dvw; */
     /* height: 100dvh; */
@@ -32,10 +24,8 @@ a{
     /* border: 1px solid green; */
     display: flex;
     width: 100dvw;
-    /* max-width: 10dvw; */
-    max-height: 100dvh;
     height: 100dvh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 nav{
@@ -45,56 +35,6 @@ nav{
     display: flex;
     flex-direction: column;
 }
-
-
-.containerFuncionalidade{
-    /* width: min-content; */
-    
-    /* overflow: auto; */
-    flex: 1;
-    display: flex;
-    /* border: 1px solid red; */
-    flex-direction: column;
-    padding: 0 40px;
-    margin-bottom: 40px;
-    /* flex-basis: content; */
-    /* margin: 0 40px; */
-    /* margin-top: 10px; */
-    /* height: auto; */
-    /* display: flex; */
-    /* margin-bottom: 40px; */
-    /* max-height: max-content; */
-    /* height: auto; */
-    /* flex-direction: column; */
-}
-
-.funcionalidade{
-    /* border: palegreen 1px solid; */
-    /* overflow: auto; */
-    /* flex: 1; */
-    /* max-height: min-content; */
-    /* max-height: fit-content; */
-    /* max-height: 10px; */
-    /* height: fit-content; */
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.headerFuncionalidade{
-    /* border: 1px solid green; */
-    border-bottom: 3px solid #F7941D;
-    /* height: 110px; */
-    padding: 10px 20px;
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
-
 
 .logo{
     width: 100%;
@@ -149,6 +89,30 @@ li div{
     /* border: 1px solid black; */
 }
 
+.containerFuncionalidade{
+    flex: 1;
+    margin: 0 10px;
+    margin-top: 10px; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerFuncionalidade{
+    /* border: 1px solid green; */
+    border-bottom: 3px solid #F7941D;
+    /* height: 110px; */
+    padding: 10px 20px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
 
 .perfileFuncionalidade{
     display: flex;
@@ -193,6 +157,13 @@ li div{
     color: #909090;
 }
 
+.funcionalidade{
+    /* border: black 1px solid; */
+    flex: 1;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
 
 nav ul li img {
     width: 38px;
@@ -207,6 +178,16 @@ nav ul li img {
     flex: 20%;
 }
 
+.funcionalidade{
+    /* height: 550px; */
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    flex: 1;
+    
+}
 
 .navbarSalas{
     display: flex;
@@ -233,7 +214,7 @@ nav ul li img {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     cursor: pointer;
 }
 
@@ -255,7 +236,7 @@ nav ul li img {
     height: 100%;
     border: none;
     background-color: none;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     border-right: none;
     border-radius: 5px;
     padding-left: 10px;
@@ -270,7 +251,7 @@ nav ul li img {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     border-radius: 5px;
     height: 100%;
     width: 40px;
@@ -292,7 +273,7 @@ nav ul li img {
     color: white;
     height: 100%;
     width: 180px;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     /* padding: 0 20px; */
     border-radius: 10px;
     cursor: pointer;
@@ -328,14 +309,14 @@ nav ul li img {
     overflow: auto;
     gap: 20px;
     max-height: 60dvh;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     padding: 15px;
     border-radius: 5px;
-    background-color: var(--CINZA-CAIXA);
+    background-color: #ccc;
 }
 
 .sala{
-    border: 1px solid var(--BORDA);
+    border: 1px solid black;
     border-radius: 10px;
     background-color: white;
     /* margin-bottom: 20px; */
@@ -390,7 +371,7 @@ nav ul li img {
 }
 
 .salaBtns div{
-    border: 1px solid var(--BORDA);
+    border: 1px solid black;
     height: 40px;
     width: 40px;
     display: flex;
@@ -412,7 +393,7 @@ nav ul li img {
 }
 
 .funcionalidade ul li{
-    border: var(--BORDA) 2px solid;
+    border: black 2px solid;
     border-radius: 10px;
     width: 250px;
     height: 45px;
@@ -424,10 +405,5 @@ nav ul li img {
     background-color: #004A8D;
     color: white;
     padding-left: 0px;
-}
-
-.TextMenu {
-    font-weight: 600;
-    color: var(--AZUL);
 }
 

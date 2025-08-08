@@ -1,13 +1,3 @@
-:root {
-    --AZUL: #004A8D;
-    --LARANJA: #F7941D;
-    --BORDA: #B0BCCB;
-    --CINZA-CAIXA: #e0e6ed;
-    
-}
-*{
-    font-family: "Poppins", sans-serif;
-}
 
 .funcionalidade ul{
     display: flex;
@@ -57,7 +47,7 @@
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     cursor: pointer;
 }
 
@@ -79,7 +69,7 @@
     height: 100%;
     border: none;
     background-color: none;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     border-right: none;
     border-radius: 5px;
     padding-left: 10px;
@@ -94,7 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     border-radius: 5px;
     height: 100%;
     width: 40px;
@@ -116,7 +106,7 @@
     color: white;
     height: 100%;
     width: 180px;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     /* padding: 0 20px; */
     border-radius: 10px;
     cursor: pointer;
@@ -125,6 +115,18 @@
 .criarusuario:hover{
     background-color: #004A8D;
     color: white;
+}
+
+#meu_modal {
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#meu_modal [open] {
+    display: block;
 }
 
 .containerUsuarios{
@@ -152,14 +154,14 @@
     overflow: auto;
     gap: 20px;
     max-height: 60dvh;
-    border: 2px solid var(--BORDA);
+    border: 2px solid black;
     padding: 15px;
     border-radius: 5px;
-    background-color: var(--CINZA-CAIXA);
+    background-color: #ccc;
 }
 
 .usuario{
-    border: 1px solid var(--BORDA);
+    border: 1px solid black;
     border-radius: 10px;
     background-color: white;
     /* margin-bottom: 20px; */
@@ -214,7 +216,7 @@
 }
 
 .usuarioBtns div{
-    border: 1px solid var(--BORDA);
+    border: 1px solid black;
     height: 40px;
     width: 40px;
     display: flex;
@@ -236,7 +238,7 @@
 }
 
 .funcionalidade ul li{
-    border: var(--BORDA) 2px solid;
+    border: black 2px solid;
     border-radius: 10px;
     width: 250px;
     height: 45px;

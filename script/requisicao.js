@@ -1,10 +1,16 @@
-const botao = document.getElementById("botao-salvar")
+const criar = document.getElementById("Add");
+const nome_prof = document.getElementById("nome");
+const email_prof = document.getElementById("email");
 
-botao.addEventListener("click", async () => {
+criar.addEventListener("click", async () => {
+
+    Nome = nome_prof.value;
+    Email = email_prof.value;
+
     const dados = {
-        nome: 'Maria Paul',
-        email : 'mariapaula@email.com'
-    };
+        nome : Nome,
+        email : Email
+    }
 
     const API = 'http://localhost:3000/professores';
 
@@ -17,7 +23,7 @@ botao.addEventListener("click", async () => {
             body : JSON.stringify(dados)
         });
         if (response.ok) {
-            console.log('200, ok')
+            console.log(response)
         } else {
             const mensagemErro = await response.text();
             throw new Error(mensagemErro);
@@ -25,5 +31,7 @@ botao.addEventListener("click", async () => {
     } catch (error) {
         console.error('Erro na requisição', error);
     }
+
+    
     
 })

@@ -1,9 +1,9 @@
 const criar = document.getElementById("Add");
 const nome_prof = document.getElementById("nome");
 const email_prof = document.getElementById("email");
+const usuarios = document.getElementById("usuarios");
 
-criar.addEventListener("click", async () => {
-
+criar.addEventListener("click", async function async ()  {
     Nome = nome_prof.value;
     Email = email_prof.value;
 
@@ -11,7 +11,6 @@ criar.addEventListener("click", async () => {
         nome : Nome,
         email : Email
     }
-
     const API = 'http://localhost:3000/professores';
 
     try {
@@ -22,16 +21,20 @@ criar.addEventListener("click", async () => {
             },
             body : JSON.stringify(dados)
         });
-        if (response.ok) {
-            console.log(response)
-        } else {
-            const mensagemErro = await response.text();
-            throw new Error(mensagemErro);
+
+        const readdata = await response.text();
+        console.log(readdata);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} - ${readdata}`)
         }
-    } catch (error) {
-        console.error('Erro na requisição', error);
+
+    }
+    
+    catch(error) {
+        console.error('Erro ao buscar dados', error)
     }
 
-    
-    
+
 })
+

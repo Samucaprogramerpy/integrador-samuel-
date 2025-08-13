@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senac Hall</title>
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/calendario.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/calendario.css">
 </head>
 <body>
     
@@ -13,32 +13,32 @@
         <nav>
             <a href="#">
                 <div class="logo">
-                    <img width="100" src="../img/image.png" alt="">
+                    <img width="100" src="./img/image.png" alt="">
                 </div>
             </a>
             <ul id="menu">
-                <li onclick="loadPageIntoDiv('agendamento.html', 'Func')" >
-                    <img src="../img/Calendario.png" alt="">
+                <li class="funcionalidadeSelecionada" onclick="loadPageIntoDiv('agendamento.html', 'Func')" >
+                    <img src="./img/Calendario.png" alt="">
                     <div>Agendamentos</div>
                 </li>
                 <li onclick="loadPageIntoDiv('salas.html', 'Func')">
-                    <img src="../img/Salas.png" alt="">
+                    <img src="./img/Salas.png" alt="">
                     <div>Salas</div>
                 </li>
                 <li onclick="loadPageIntoDiv('usuarios.html', 'Func')">
-                    <img src="../img/Perfil.png" alt="">
+                    <img src="./img/Perfil.png" alt="">
                     <div>Usuários</div>
                 </li>
                 <li>
-                    <img src="../img/Instrutor.png" alt="">
+                    <img src="./img/Instrutor.png" alt="">
                     <div>Pedidos de Instrutores</div>
                 </li>
                 <li>
-                    <img src="../img/Bloqueio.png" alt="">
+                    <img src="./img/Bloqueio.png" alt="">
                     <div>Bloqueios de Agendamentos</div>
                 </li>
                 <li>
-                    <img src="../img/Sair.png" alt="">
+                    <img src="./img/Sair.png" alt="">
                     <div>Sair</div>
                 </li>
                 
@@ -46,8 +46,6 @@
         </nav>
         <div class="containerFuncionalidade" id="Func">
     </div>
-
-
 </body>
 
 <script>
@@ -59,15 +57,23 @@
           .then(response => response.text())
           .then(data => {
             const divSec= document.getElementById(divId)
-            if (divSec) {
-                divSec.innerHTML = data;
-            } else {
-                console.error('error!')
-            }
+            divSec.innerHTML = data
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data;
+            divSec.querySelectorAll("script").forEach(oldScript => {
+                const newScript = document.createElement("script");
+                if (oldScript.src) {
+                    newScript.src = oldScript.src; // script externo
+                } else {
+                    newScript.textContent = oldScript.textContent; // script inline
+                }
+                document.body.appendChild(newScript);
+                document.body.removeChild(newScript);
+            });
+        })
+        .catch(error => console.error('Erro ao carregar a página:', error));
 
-          })
-          .catch(error => console.error('Erro ao carregar a página:', error));
-    }
+    }  
     const Menu = document.querySelectorAll("#menu li");
     Menu.forEach(item => {
     item.addEventListener("click", function () {
@@ -76,6 +82,13 @@
 
         // Adiciona ao item clicado
         this.classList.add("funcionalidadeSelecionada");
+        const API = 'http://localhost:3000/professores'
+        fetch(API)
+            .then(response => response)
+            .then(data => {
+                console.log(data)
+            })
+
     });
 });
 </script>

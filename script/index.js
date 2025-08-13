@@ -4,7 +4,7 @@ import 'dotenv/config';
 import cors from 'cors'
 
 const app = express();
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
 const sql = neon(process.env.DATABASE_URL);

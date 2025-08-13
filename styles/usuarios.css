@@ -18,6 +18,9 @@
     
 }
 
+#meu_modal{
+    margin: auto;
+}
 .navbarUsuarios{
     display: flex;
     justify-content: space-between;

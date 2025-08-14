@@ -1,12 +1,14 @@
-
-
 const criar = document.getElementById("Add");
 const nome_prof = document.getElementById("nome");
 const email_prof = document.getElementById("email");
 const usuarios = document.getElementById("usuarios");
+const botao = document.getElementById("showModal");
+const modal = document.getElementById("meu_modal");
+const menu = document.getElementById("menu");
 
 
-document.addEventListener("DOMContentLoaded", carregar() )
+
+document.addEventListener("DOMContentLoaded", carregar())
 
 criar.addEventListener("click", async function async ()  {
     Nome = nome_prof.value;
@@ -39,8 +41,10 @@ criar.addEventListener("click", async function async ()  {
         console.error('Erro ao buscar dados', error)
     }
 
-    modal.style.display = 'none';
-    carregar();
+    carregarPagina("usuario.html")
+
+
+    
 })
 
 async function carregar() {
@@ -48,7 +52,7 @@ async function carregar() {
         .then(resposta => resposta.text())
         .then(dados => {
             const dado = JSON.parse(dados);
-             const fragmento = document.createDocumentFragment();
+            const fragmento = document.createDocumentFragment();
             dado.forEach(dado => {
                 
                 const usuario = document.createElement('div');
@@ -64,5 +68,12 @@ async function carregar() {
         .catch(error => {
             console.error("erro na requisição", error);
         });
-}
+    
+};
+
+botao.addEventListener("click", () => {
+    modal.showModal();
+})
+
+
 

@@ -41,7 +41,7 @@ criar.addEventListener("click", async function async ()  {
         console.error('Erro ao buscar dados', error)
     }
 
-    carregarPagina("usuario.html")
+    modal.close()
 
 
     

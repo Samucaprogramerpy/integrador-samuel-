@@ -1,0 +1,5 @@
+Emerson: funcionalidade calendário e senacHallAPI
+Samuel: criação de cadastramento de usuário e formulário modal
+João Neto: Estilização da aplicação
+João: Estilização da aplicação
+Erik: Estilização da aplicação e organização do código
